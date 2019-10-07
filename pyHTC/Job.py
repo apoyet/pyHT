@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import subprocess
 
-
 class JobObj():
     '''
     This is a class to define a single job.
@@ -21,8 +20,6 @@ class JobObj():
         self.job_flavour = job_flavour
         self.universe = universe
         self.queue = queue
-        
-
         
     def submit2str(self):
         myString = '''executable = {}\n'''.format(self.executable)
@@ -74,7 +71,3 @@ class JobObj():
             print(subprocess.check_output(["condor_q", jobID]))
         else: 
             print(subprocess.check_output(["condor_q"]))
-        
-            
-        
-    
